@@ -13,3 +13,24 @@ JJWT
 * setId: sets the jti (JWT ID) Claim
 ###### [reference](https://github.com/jwtk/jjwt/blob/master/README.md)
 ###### [https://jwt.io/](https://jwt.io/)
+```java
+  final long ONE_MINUTE_IN_MILLIS = 1000;// millisecs
+  Calendar date = Calendar.getInstance();
+  long t = date.getTimeInMillis();
+  Date afterAddingTenMins = new Date(t + (10 * ONE_MINUTE_IN_MILLIS));
+  String jwt = Jwts.builder().
+  setSubject("users/TzMUocMF4p").
+  setExpiration(afterAddingTenMins)
+      .claim("name", "Robert Token Man")
+      .claim("scope", "self groups/admins")
+      .claim("pwd", "w87878787")
+      .signWith(SignatureAlgorithm.HS256, "secret".getBytes("UTF-8"))
+      .compact();
+    System.out.println(jwt);
+
+  Jws<Claims> jws = Jwts
+    .parser()
+    .setSigningKey("secret".getBytes("UTF-8"))
+    .parseClaimsJws(jwt);
+  System.out.println(jws.toString());
+```
