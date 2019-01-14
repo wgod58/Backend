@@ -23,16 +23,4 @@ public class test {
 		System.out.println(jws.toString());
 
 	}
-
-	public static void sortIntArray(int[] intArray) {
-		for (int i = 0; i < intArray.length; i++) {
-			for (int x = i + 1; x < intArray.length; x++) {
-				if (intArray[i] > intArray[x]) {
-					int temp = intArray[x];
-					intArray[x] = intArray[i];
-					intArray[i] = temp;
-				}
-			}
-		}
-	}
 }
