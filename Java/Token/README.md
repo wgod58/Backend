@@ -2,7 +2,7 @@ JJWT
 ===========================
 ****
 
-######The JwtBuilder provides convenient setter methods for standard registered Claim names defined in the JWT specification. They are:
+###### The JwtBuilder provides convenient setter methods for standard registered Claim names defined in the JWT specification. They are:
 
 * setIssuer: sets the iss (Issuer) Claim
 * setSubject: sets the sub (Subject) Claim
@@ -11,5 +11,5 @@ JJWT
 * setNotBefore: sets the nbf (Not Before) Claim
 * setIssuedAt: sets the iat (Issued At) Claim
 * setId: sets the jti (JWT ID) Claim
-######[reference](https://github.com/jwtk/jjwt/blob/master/README.md)
+###### [reference](https://github.com/jwtk/jjwt/blob/master/README.md)
 ###### [https://jwt.io/](https://jwt.io/)
