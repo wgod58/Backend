@@ -14,6 +14,14 @@ JJWT
 ###### [reference](https://github.com/jwtk/jjwt/blob/master/README.md)
 ###### [https://jwt.io/](https://jwt.io/)
 ```java
+  import java.io.UnsupportedEncodingException;
+  import java.util.Calendar;
+  import java.util.Date;
+
+  import io.jsonwebtoken.Claims;
+  import io.jsonwebtoken.Jws;
+  import io.jsonwebtoken.Jwts;
+  import io.jsonwebtoken.SignatureAlgorithm;
   final long ONE_MINUTE_IN_MILLIS = 1000;// millisecs
   Calendar date = Calendar.getInstance();
   long t = date.getTimeInMillis();
@@ -31,6 +39,6 @@ JJWT
   Jws<Claims> jws = Jwts
     .parser()
     .setSigningKey("secret".getBytes("UTF-8"))
-    .parseClaimsJws(jwt);
+    .parseClaimsJws(jwt);//come out exception when time expire
   System.out.println(jws.toString());
 ```
